@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sarah Villa D. Grapa — UI/UX Designer</title>
+<title>Sarah Villa D. Grapa — Graphic Designer &amp; Data Encoder</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -73,33 +73,38 @@ nav.top-nav{
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5vw,4.5rem);line-height:1.07;color:var(--text);margin-bottom:1.3rem}
 .hero-h1 em{font-style:italic;color:var(--rose)}
 .hero-h1 .dot{color:var(--rose)}
-.hero-sub{font-size:1rem;color:var(--sub);line-height:1.75;max-width:400px;margin-bottom:2.2rem}
+.hero-sub{font-size:1rem;color:var(--sub);line-height:1.75;max-width:420px;margin-bottom:2.2rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--rose-lt);color:var(--rose);padding:.4rem .9rem;border-radius:99px;font-size:.72rem;font-weight:700;letter-spacing:.04em;margin-bottom:1.1rem}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;animation:statusBlink 2s ease infinite}
 .btn-primary{display:inline-flex;align-items:center;gap:.55rem;background:var(--plum);color:#fff;padding:.8rem 1.8rem;border-radius:5px;font-weight:600;font-size:.9rem;transition:opacity .2s,background var(--tr);border:none;cursor:pointer}
 [data-theme="dark"] .btn-primary{background:var(--rose)}
 .btn-primary:hover{opacity:.82}
+.hero-btn-row{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn-outline{display:inline-flex;align-items:center;gap:.55rem;background:transparent;color:var(--text);padding:.8rem 1.8rem;border-radius:5px;font-weight:600;font-size:.9rem;border:1.5px solid var(--border);cursor:pointer;transition:border-color .2s,color .2s}
+.btn-outline:hover{border-color:var(--rose);color:var(--rose)}
 .hero-visual{position:relative;display:flex;justify-content:center;align-items:flex-end}
 .hero-float{animation:float 4s ease-in-out infinite;display:inline-flex;justify-content:center}
 .hero-circle{width:clamp(280px,38vw,440px);height:clamp(280px,38vw,440px);border-radius:50%;background:var(--rose-lt);position:relative;overflow:hidden;transition:background var(--tr);}
 .hero-circle img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:88%;height:108%;object-fit:cover;object-position:top center;}
-.hero-circle .img-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--muted);font-size:.78rem;opacity:.5;}
-.hero-circle .img-ph svg{width:40px}
+.hero-circle .code-badge{position:absolute;bottom:14px;right:14px;background:var(--plum);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;box-shadow:var(--sh);z-index:2}
+[data-theme="dark"] .hero-circle .code-badge{background:var(--rose)}
 
 /* ABOUT */
 #about{padding:72px 6%;display:grid;grid-template-columns:200px 1fr 1fr;gap:3rem;align-items:start;border-top:1px solid var(--border);}
 .about-photo{width:100%;aspect-ratio:3/4;border-radius:10px;background:var(--rose-lt);overflow:hidden;position:relative;transition:background var(--tr);box-shadow:var(--sh);}
 .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.about-photo .img-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:var(--muted);font-size:.7rem;opacity:.45}
-.about-photo .img-ph svg{width:28px}
 .sec-title{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:var(--text);margin-bottom:.5rem;transition:color var(--tr)}
 .sec-rule{width:34px;height:2.5px;background:var(--rose);border-radius:2px;margin-bottom:1rem}
 .about-text{font-size:.9rem;color:var(--sub);line-height:1.8;margin-bottom:1.2rem}
 .link-arr{font-size:.875rem;font-weight:600;color:var(--rose);display:inline-flex;align-items:center;gap:.4rem;transition:gap .2s;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
 .link-arr:hover{gap:.75rem}
 .skills-grid{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.8rem}
-.chip{border:1.5px solid var(--rose);border-radius:7px;width:65px;height:65px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:.58rem;color:var(--sub);font-weight:600;cursor:default;transition:background .22s,color .22s,transform .22s,border-color var(--tr);animation:chipPop .5s ease backwards;}
+.chip{border:1.5px solid var(--rose);border-radius:7px;min-width:65px;height:65px;padding:0 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:.58rem;color:var(--sub);font-weight:600;cursor:default;transition:background .22s,color .22s,transform .22s,border-color var(--tr);animation:chipPop .5s ease backwards;}
 .chip:hover{background:var(--rose);color:#fff;transform:translateY(-4px)}
 .chip:hover .chip-ico{color:#fff}
 .chip-ico{font-size:.9rem;font-weight:800;color:var(--rose);font-family:'Playfair Display',serif;transition:color .22s}
+.tech-group{margin-bottom:1.1rem}
+.tech-group-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;margin-bottom:.6rem}
 
 /* GLANCE */
 #glance{padding:0 6% 72px}
@@ -145,14 +150,23 @@ nav.top-nav{
 .proj-thumb{aspect-ratio:4/3;border-radius:8px;margin-bottom:.85rem;overflow:hidden;position:relative;background:var(--rose-lt);border:1px solid var(--border);transition:background var(--tr);}
 .proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
 .proj-card:hover .proj-thumb img{transform:scale(1.05)}
-.proj-thumb .img-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:var(--muted);font-size:.72rem;opacity:.4}
-.proj-thumb .img-ph svg{width:26px}
 .proj-thumb .hover-overlay{position:absolute;inset:0;background:rgba(200,86,107,.82);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s;z-index:2}
 .proj-card:hover .hover-overlay{opacity:1}
 .hover-overlay span{color:#fff;font-weight:600;font-size:.85rem;letter-spacing:.05em}
 .proj-tag{font-size:.7rem;font-weight:700;color:var(--rose);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
 .proj-name{font-weight:600;font-size:.93rem;color:var(--text);display:flex;align-items:center;gap:.4rem}
 .proj-name svg{width:13px;color:var(--rose);flex-shrink:0}
+.proj-url{font-size:.72rem;color:var(--muted);margin-top:.15rem}
+
+/* CERTIFICATES */
+#certificates{padding:72px 6%;border-top:1px solid var(--border)}
+.cert-grid{display:flex;flex-direction:column;gap:.9rem;margin-top:1.5rem;max-width:700px}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;gap:1.1rem;box-shadow:var(--sh2);transition:background var(--tr),transform .22s;}
+.cert-card:hover{transform:translateY(-3px)}
+.cert-icon{width:38px;height:38px;border-radius:8px;background:var(--rose-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background var(--tr);}
+.cert-icon svg{width:17px;color:var(--rose)}
+.cert-name{font-weight:700;font-size:.88rem;color:var(--text)}
+.cert-org{font-size:.77rem;color:var(--sub);margin-top:.1rem}
 
 /* SOCIAL */
 #social{padding:72px 6%;border-top:1px solid var(--border)}
@@ -189,19 +203,14 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
 .modal-close:hover{background:var(--rose);color:#fff}
 #projModal .modal{max-width:820px}
 .proj-modal-img{width:100%;aspect-ratio:16/9;background:var(--rose-lt);border-radius:14px 14px 0 0;overflow:hidden;position:relative;transition:background var(--tr)}
-.proj-modal-img img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s}
-.proj-modal-img img.loaded{opacity:1}
-.proj-modal-img .img-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--muted);font-size:.8rem;opacity:.4}
-.proj-modal-img .img-ph svg{width:38px}
+.proj-modal-img img{width:100%;height:100%;object-fit:cover}
 .proj-modal-body{padding:2rem}
 .proj-modal-tag{font-size:.7rem;font-weight:700;color:var(--rose);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem}
 .proj-modal-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--text);margin-bottom:.8rem}
 .proj-modal-desc{font-size:.9rem;color:var(--sub);line-height:1.8;margin-bottom:1.2rem}
 .proj-modal-imgs{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-top:1rem}
-.pm-sub{aspect-ratio:4/3;background:var(--rose-lt);border-radius:8px;border:1px solid var(--border);overflow:hidden;position:relative;transition:background var(--tr)}
+.pm-sub{aspect-ratio:4/3;background:var(--rose-lt);border-radius:8px;border:1px solid var(--border);overflow:hidden;position:relative;transition:background var(--tr);cursor:zoom-in}
 .pm-sub img{width:100%;height:100%;object-fit:cover}
-.pm-sub .img-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;color:var(--muted);font-size:.65rem;opacity:.4}
-.pm-sub .img-ph svg{width:20px}
 #allModal .modal{max-width:920px}
 .all-body{padding:2rem}
 .all-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.2rem}
@@ -209,8 +218,6 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
 .all-card:hover{transform:translateY(-4px)}
 .all-thumb{aspect-ratio:4/3;background:var(--rose-lt);border:1px solid var(--border);border-radius:8px;margin-bottom:.6rem;overflow:hidden;position:relative;transition:background var(--tr)}
 .all-thumb img{width:100%;height:100%;object-fit:cover}
-.all-thumb .img-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;color:var(--muted);font-size:.68rem;opacity:.4}
-.all-thumb .img-ph svg{width:22px}
 .all-thumb .hover-overlay{position:absolute;inset:0;background:rgba(200,86,107,.8);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .22s;z-index:2}
 .all-card:hover .hover-overlay{opacity:1}
 .all-proj-tag{font-size:.67rem;font-weight:700;color:var(--rose);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem}
@@ -222,9 +229,9 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .fg{margin-bottom:1.1rem}
 .fg label{display:block;font-size:.77rem;font-weight:600;color:var(--text);margin-bottom:.4rem;letter-spacing:.04em}
-.fg input,.fg textarea{width:100%;padding:.72rem 1rem;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s,background var(--tr),color var(--tr)}
-.fg input:focus,.fg textarea:focus{border-color:var(--rose)}
-.fg textarea{resize:vertical;min-height:120px}
+.fg input,.fg textarea,.fg select{width:100%;padding:.72rem 1rem;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s,background var(--tr),color var(--tr)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--rose)}
+.fg textarea{resize:vertical;min-height:110px}
 .btn-submit{width:100%;padding:.82rem;background:var(--plum);color:#fff;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .2s,background var(--tr);display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.5rem}
 [data-theme="dark"] .btn-submit{background:var(--rose)}
 .btn-submit:hover{opacity:.85}
@@ -234,106 +241,31 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
 .form-success h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:.5rem}
 .form-success p{font-size:.875rem;color:var(--sub)}
 
-/* ══════════════════════════════════
-   MOBILE BOTTOM NAV — Pill Style (matches screenshot)
-══════════════════════════════════ */
-.mob-nav{
-  display:none;
-  position:fixed;
-  bottom:0;left:0;right:0;
-  z-index:400;
-  flex-direction:column;
-  pointer-events:none;
-}
+/* LIGHTBOX */
+.lightbox-bg{display:none;position:fixed;inset:0;z-index:1200;background:rgba(15,8,10,.92);align-items:center;justify-content:center;padding:2rem}
+.lightbox-bg.open{display:flex}
+.lightbox-bg img{max-width:92vw;max-height:88vh;border-radius:8px;transition:opacity .15s}
+.lightbox-close{position:fixed;top:20px;right:24px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.2rem;cursor:pointer}
 
-/* Bible verse banner */
-.mob-quote{
-  pointer-events:auto;
-  background:var(--bg);
-  border-top:1px solid var(--border);
-  padding:.55rem 1.2rem;
-  text-align:center;
-  font-size:.62rem;
-  color:var(--sub);
-  line-height:1.5;
-  font-style:italic;
-}
-.mob-quote strong{
-  display:block;
-  font-style:normal;
-  font-size:.57rem;
-  font-weight:600;
-  color:var(--muted);
-  margin-top:.15rem;
-  letter-spacing:.03em;
-}
-
-/* Icon row */
-.mob-nav-bar{
-  pointer-events:auto;
-  background:var(--card);
-  border-top:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:space-around;
-  padding:.6rem .4rem calc(.6rem + env(safe-area-inset-bottom));
-  gap:.2rem;
-}
-
-.mob-item{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:3px;
-  font-size:.58rem;
-  color:var(--muted);
-  font-weight:600;
-  cursor:pointer;
-  padding:.45rem .8rem;
-  border-radius:14px;
-  background:transparent;
-  border:none;
-  transition:background .2s, color .2s;
-  min-width:50px;
-}
-.mob-item.active{
-  background:var(--rose-lt);
-  color:var(--rose);
-}
+/* MOBILE BOTTOM NAV */
+.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;flex-direction:column;pointer-events:none;}
+.mob-quote{pointer-events:auto;background:var(--bg);border-top:1px solid var(--border);padding:.55rem 1.2rem;text-align:center;font-size:.62rem;color:var(--sub);line-height:1.5;font-style:italic;}
+.mob-quote strong{display:block;font-style:normal;font-size:.57rem;font-weight:600;color:var(--muted);margin-top:.15rem;letter-spacing:.03em;}
+.mob-nav-bar{pointer-events:auto;background:var(--card);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-around;padding:.6rem .4rem calc(.6rem + env(safe-area-inset-bottom));gap:.2rem;}
+.mob-item{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.58rem;color:var(--muted);font-weight:600;cursor:pointer;padding:.45rem .8rem;border-radius:14px;background:transparent;border:none;transition:background .2s, color .2s;min-width:50px;}
+.mob-item.active{background:var(--rose-lt);color:var(--rose);}
 .mob-item.active svg{stroke:var(--rose)}
 .mob-item:hover{color:var(--rose)}
 .mob-item svg{width:20px;height:20px;stroke:var(--muted);transition:stroke .2s}
-
-/* Scroll-to-top FAB — purple/rose circle matching screenshot */
-.mob-fab{
-  display:none;
-  position:fixed;
-  right:16px;
-  bottom:calc(var(--mob-nav-h) + 12px);
-  z-index:410;
-  width:46px;height:46px;
-  border-radius:50%;
-  background:var(--rose);
-  color:#fff;
-  border:none;
-  cursor:pointer;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 4px 20px rgba(200,86,107,.5);
-  transition:opacity .3s, transform .3s, background var(--tr);
-  opacity:0;
-  transform:translateY(12px);
-}
+.mob-fab{display:none;position:fixed;right:16px;bottom:calc(var(--mob-nav-h) + 12px);z-index:410;width:46px;height:46px;border-radius:50%;background:var(--rose);color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(200,86,107,.5);transition:opacity .3s, transform .3s, background var(--tr);opacity:0;transform:translateY(12px);}
 .mob-fab.visible{opacity:1;transform:translateY(0)}
 .mob-fab svg{width:20px;height:20px}
 
 /* RESPONSIVE */
 @media(max-width:900px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
-
 @media(max-width:768px){
   nav.top-nav{padding:0 4%}
   .nav-links,.side-label,.btn-nav{display:none}
-
   #home{grid-template-columns:1fr;padding:80px 4% 2.5rem;min-height:auto}
   .hero-visual{order:-1;margin-bottom:1.5rem}
   .hero-circle{width:200px;height:200px;margin:0 auto}
@@ -342,20 +274,15 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
   .about-photo{max-width:150px}
   .glance-grid{grid-template-columns:1fr}
   #glance{padding:0 4% 3rem}
-  #education,#experience,#social,#work{padding:3rem 4%}
+  #education,#experience,#social,#work,#certificates{padding:3rem 4%}
   #contact{grid-template-columns:1fr;text-align:center;margin:0 4% 2rem}
   footer{grid-template-columns:1fr 1fr;padding-bottom:2rem}
   .all-grid{grid-template-columns:repeat(2,1fr)}
   .form-row{grid-template-columns:1fr}
-
-  /* Show mobile elements */
   .mob-nav{display:flex}
   .mob-fab{display:flex}
-
-  /* Pad body so content clears the nav */
   body{padding-bottom:var(--mob-nav-h)}
 }
-
 @media(max-width:480px){
   .proj-grid,.all-grid{grid-template-columns:1fr}
   .proj-modal-imgs{grid-template-columns:1fr}
@@ -363,7 +290,6 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
   .social-btn{font-size:.8rem;padding:.6rem 1rem}
   .mob-item{min-width:44px;padding:.4rem .5rem;font-size:.55rem}
 }
-
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
@@ -397,24 +323,24 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
 
 <!-- HERO -->
 <section id="home">
-  <span class="side-label">UI / UX Designer</span>
+  <span class="side-label">Graphic Designer · LAMS Data Encoder</span>
   <div>
     <p class="eyebrow reveal">Hey, I'm Sarah</p>
-    <h1 class="hero-h1 reveal" style="transition-delay:.1s">I design<br>visual <em>stories</em><span class="dot">.</span></h1>
-    <p class="hero-sub reveal" style="transition-delay:.2s">I'm a UI/UX Designer who loves turning ideas into meaningful and beautiful digital experiences.</p>
-    <a href="#work" class="btn-primary reveal" style="transition-delay:.3s">
-      View My Work
-      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8h10M8 4l6 4-6 4"/></svg>
-    </a>
+    <h1 class="hero-h1 reveal" style="transition-delay:.1s">I craft<br>clean <em>designs</em><span class="dot">.</span></h1>
+    <p class="hero-sub reveal" style="transition-delay:.2s">I'm a Graphic Designer and Data Encoder who brings ideas to life through clean visuals and accurate, well-organized records — thoughtful design, precise data handling, results that hold up.</p>
+    <div class="hero-btn-row reveal" style="transition-delay:.3s">
+      <a href="#work" class="btn-primary">
+        View My Work
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8h10M8 4l6 4-6 4"/></svg>
+      </a>
+      <a href="mailto:sarahgrapa9703@gmail.com" class="btn-outline">Send Email</a>
+    </div>
   </div>
   <div class="hero-visual">
     <div class="hero-float reveal-r" style="transition-delay:.15s">
       <div class="hero-circle">
-        <img src="YOUR_PHOTO_HERE.png" alt="Sarah Villa D. Grapa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="img-ph" style="display:none">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          <span>Add hero photo</span>
-        </div>
+        <img src="images/sarah.png" alt="Sarah Villa D. Grapa">
+        <div class="code-badge">🎨</div>
       </div>
     </div>
   </div>
@@ -424,32 +350,40 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
 <section id="about">
   <div class="reveal-l">
     <div class="about-photo">
-      <img src="YOUR_ABOUT_PHOTO_HERE.jpg" alt="Sarah" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="img-ph" style="display:none">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        <span>Add photo</span>
-      </div>
+      <img src="images/sarah.png" alt="Sarah Villa Grapa">
     </div>
   </div>
   <div class="reveal" style="transition-delay:.1s">
     <div class="sec-title">About Me</div>
     <div class="sec-rule"></div>
-    <p class="about-text">I'm <strong>Sarah Villa D. Grapa</strong>, a passionate UI/UX Designer and BSIT student with a love for crafting clean, user-centered digital experiences. I believe great design bridges the gap between people and technology — turning complex ideas into intuitive, beautiful products.</p>
+    <p class="about-text">I'm <strong>Sarah Villa D. Grapa</strong>, a BSIT student at Negros Oriental State University, Bais Campus, and a Graphic Designer / Data Encoder. I create clean visual designs and manage accurate data entry and records — with a focus on attention to detail, organization, and reliable turnaround. I currently work as a LAMS (Learner Information System) Encoder handling data entry for learner records.</p>
     <button class="link-arr" onclick="openModal('contactModal')">
       Get in Touch
       <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8h10M8 4l6 4-6 4"/></svg>
     </button>
   </div>
   <div class="reveal-r" style="transition-delay:.15s">
-    <div class="sec-title">Skills</div>
+    <div class="sec-title">Tech Stack</div>
     <div class="sec-rule"></div>
-    <div class="skills-grid">
-      <div class="chip" style="animation-delay:.05s"><span class="chip-ico">Fg</span>Figma</div>
-      <div class="chip" style="animation-delay:.12s"><span class="chip-ico">Cv</span>Canva</div>
-      <div class="chip" style="animation-delay:.19s"><span class="chip-ico">Ps</span>Photoshop</div>
-      <div class="chip" style="animation-delay:.26s"><span class="chip-ico">Ai</span>Illustrator</div>
-      <div class="chip" style="animation-delay:.33s"><span class="chip-ico">Xd</span>Adobe XD</div>
-      <div class="chip" style="animation-delay:.40s"><span class="chip-ico">Pr</span>Premiere</div>
+    <div class="tech-group">
+      <div class="tech-group-label">Design Tools</div>
+      <div class="skills-grid">
+        <div class="chip"><span class="chip-ico">Fg</span>Figma</div>
+        <div class="chip"><span class="chip-ico">Cv</span>Canva</div>
+        <div class="chip"><span class="chip-ico">Ps</span>Photoshop</div>
+        <div class="chip"><span class="chip-ico">Ai</span>Illustrator</div>
+        <div class="chip"><span class="chip-ico">Xd</span>Adobe XD</div>
+      </div>
+    </div>
+    <div class="tech-group">
+      <div class="tech-group-label">Microsoft / Data Entry</div>
+      <div class="skills-grid">
+        <div class="chip"><span class="chip-ico">Wd</span>MS Word</div>
+        <div class="chip"><span class="chip-ico">Xl</span>MS Excel</div>
+        <div class="chip"><span class="chip-ico">Pp</span>MS PowerPoint</div>
+        <div class="chip"><span class="chip-ico">Ol</span>MS Outlook</div>
+        
+      </div>
     </div>
   </div>
 </section>
@@ -464,11 +398,11 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
   <div class="glance-grid reveal" style="transition-delay:.1s">
     <div class="glance-item">
       <div class="glance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-      <div><div class="glance-label">Location</div><div class="glance-val">Mandih, Zamboaga Del Norte, PH</div></div>
+      <div><div class="glance-label">Location</div><div class="glance-val">Negros Oriental, Central Visayas, PH</div></div>
     </div>
     <div class="glance-item">
       <div class="glance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-      <div><div class="glance-label">Email</div><div class="glance-val">savillagrapa09@gmail.com</div></div>
+      <div><div class="glance-label">Email</div><div class="glance-val">sarahgrapa9703@gmail.com</div></div>
     </div>
     <div class="glance-item">
       <div class="glance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
@@ -490,10 +424,19 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
     <div class="edu-card reveal" style="transition-delay:.12s">
       <div class="edu-dot"></div>
       <div>
-        <div class="edu-yr">2022 – 2026</div>
+        <div class="edu-yr">2021</div>
         <div class="edu-deg">Bachelor of Science in Information Technology</div>
-        <div class="edu-sch">Negros Oriental State University</div>
-        <div class="edu-prog">BSIT Program · College</div>
+        <div class="edu-sch">Negros Oriental State University — Bais Campus</div>
+        <div class="edu-prog">BSIT Program</div>
+      </div>
+    </div>
+    <div class="edu-card reveal" style="transition-delay:.2s">
+      <div class="edu-dot"></div>
+      <div>
+        <div class="edu-yr">2017</div>
+        <div class="edu-deg">Senior High School</div>
+        <div class="edu-sch">Sindangan National Agricultural School - Sindagan, Zamboaga Del Norte</div>
+        <div class="edu-prog">STEM( Science, Technology, Engineering, and Mathematics)</div>
       </div>
     </div>
   </div>
@@ -508,28 +451,37 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
     <div class="exp-card reveal" style="transition-delay:.12s">
       <div class="exp-dot"></div>
       <div>
-        <div class="exp-role">UI/UX Designer</div>
-        <div class="exp-company">Freelance / Remote</div>
-        <div class="exp-period">2024 – Present · Freelance</div>
-        <div class="exp-desc">Designing user interfaces and experiences for web and mobile projects. Creating wireframes, prototypes, and high-fidelity designs using Figma and Adobe tools.</div>
+        <div class="exp-role">LAMS Encoder (Data Entry)</div>
+        <div class="exp-company">Learner Information System</div>
+        <div class="exp-period">Current</div>
+        <div class="exp-desc">Handling accurate, organized data entry and record-keeping of learner information using the LAMS platform.</div>
       </div>
     </div>
-    <div class="exp-card reveal" style="transition-delay:.2s">
+    <div class="exp-card reveal" style="transition-delay:.18s">
       <div class="exp-dot"></div>
       <div>
-        <div class="exp-role">Your Job Title</div>
-        <div class="exp-company">Company / Organization</div>
-        <div class="exp-period">Month Year – Month Year · Type</div>
-        <div class="exp-desc">Brief description of your responsibilities, achievements, and contributions in this role.</div>
+        <div class="exp-role">Graphic Designer</div>
+        <div class="exp-company">Commission-Based · Freelance</div>
+        <div class="exp-period">Ongoing</div>
+        <div class="exp-desc">Creating branding materials, social media graphics, and layout designs for clients using Figma, Canva, Photoshop, Illustrator, and Adobe XD.</div>
       </div>
     </div>
-    <div class="exp-card reveal" style="transition-delay:.28s">
+    <div class="exp-card reveal" style="transition-delay:.24s">
       <div class="exp-dot"></div>
       <div>
-        <div class="exp-role">Your Job Title</div>
-        <div class="exp-company">Company / Organization</div>
-        <div class="exp-period">Month Year – Month Year · Type</div>
-        <div class="exp-desc">Brief description of your responsibilities, achievements, and contributions in this role.</div>
+        <div class="exp-role">Capstone Project Member</div>
+        <div class="exp-company">Negros Oriental State University — Bais Campus</div>
+        <div class="exp-period">Current</div>
+        <div class="exp-desc">Collaborating on a BSIT capstone project with Dahn Reymart Capiong, Jaz Steven Bok, and Bartolome Zerna Jr., under adviser Mr. Mark Julius V. Badoy.</div>
+      </div>
+    </div>
+    <div class="exp-card reveal" style="transition-delay:.3s">
+      <div class="exp-dot"></div>
+      <div>
+        <div class="exp-role">Professional Development</div>
+        <div class="exp-company">Seminars and Webinars</div>
+        <div class="exp-period"></div>
+        <div class="exp-desc">Continuously expanding knowledge through seminars and webinars on graphic design, data management, and office productivity tools.</div>
       </div>
     </div>
   </div>
@@ -551,28 +503,58 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
   <div class="proj-grid" id="featuredGrid"></div>
 </section>
 
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <p class="edu-eyebrow reveal">Credentials</p>
+  <div class="sec-title reveal" style="transition-delay:.07s">Certificates &amp; Training</div>
+  <div class="sec-rule reveal" style="transition-delay:.1s"></div>
+  <div class="cert-grid">
+    <div class="cert-card reveal" style="transition-delay:.12s">
+      <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+      <div>
+        <div class="cert-name">Introduction to Visual Graphic</div>
+        <div class="cert-org">Design- TESDA Online Program(2026)</div>
+      </div>
+    </div>
+    <div class="cert-card reveal" style="transition-delay:.18s">
+      <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+      <div>
+        <div class="cert-name">Microsoft Office Essentials</div>
+        <div class="cert-org">Word, Excel, PowerPoint Proficiency</div>
+      </div>
+    </div>
+    <div class="cert-card reveal" style="transition-delay:.24s">
+      <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+      <div>
+        <div class="cert-name">Social Engineering: The Human side of Hacking</div>
+        <div class="cert-org">Mariano Marcos State University</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SOCIAL LINKS -->
 <section id="social">
   <p class="edu-eyebrow reveal">Connect</p>
   <div class="sec-title reveal" style="transition-delay:.07s">Social Links</div>
   <div class="sec-rule reveal" style="transition-delay:.1s"></div>
   <div class="social-grid reveal" style="transition-delay:.15s">
-    <a href="mailto:savillagrapa09@gmail.com" class="social-btn">
+    <a href="mailto:sarahgrapa9703@gmail.com" class="social-btn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email
     </a>
-    <a href="https://facebook.com/YOUR_USERNAME" target="_blank" class="social-btn">
+    <a href="#" target="_blank" class="social-btn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook
     </a>
-    <a href="https://instagram.com/YOUR_USERNAME" target="_blank" class="social-btn">
+    <a href="#" target="_blank" class="social-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub
+    </a>
+    <a href="#" target="_blank" class="social-btn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram
     </a>
-    <a href="https://behance.net/YOUR_USERNAME" target="_blank" class="social-btn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 12H3V6h5c2 0 3 .8 3 2.2 0 .8-.5 1.5-1.2 1.8C11.2 10.4 12 11.3 12 12.5c0 2-1.5 3-4 3H3v-3.5h5.5"/><line x1="15" y1="8" x2="21" y2="8"/><path d="M15 12h6c0-3.3-2-5-4-4.5"/><path d="M15 16h6c-.5 1.5-2 2.5-4 2.5-2.5 0-4-1.5-4-4.5s1.5-4.5 4-4.5"/></svg>Behance
+    <a href="#" target="_blank" class="social-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3v9.5a3.5 3.5 0 11-3.5-3.5H13"/><path d="M16 3c0 2.5 2 4.5 4.5 4.5"/></svg>TikTok
     </a>
-    <a href="https://dribbble.com/YOUR_USERNAME" target="_blank" class="social-btn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>Dribbble
-    </a>
-    <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" class="social-btn">
+    <a href="#" target="_blank" class="social-btn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
     </a>
   </div>
@@ -583,7 +565,7 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
   <div class="cta-star">✦</div>
   <div>
     <h2 class="cta-h">Have a project <em>in mind?</em></h2>
-    <p class="cta-sub">I'm always open to discussing new projects and creative ideas.</p>
+    <p class="cta-sub">I'm currently available for freelance design and data entry work — let's build something amazing together.</p>
   </div>
   <button class="btn-cta" onclick="openModal('contactModal')">
     Let's Talk
@@ -595,7 +577,7 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
 <footer>
   <div class="ft-brand">
     <div class="logo" style="font-size:1.35rem">S<span style="color:var(--rose);font-size:1.5rem">.</span></div>
-    <p>© 2025 Sarah Villa D. Grapa<br>All rights reserved.</p>
+    <p>© 2026 Sarah Villa D. Grapa<br>"Commit your work to the Lord, and your plans will be established." — Proverbs 16:3</p>
   </div>
   <div class="ft-col">
     <h4>Menu</h4>
@@ -610,26 +592,24 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
   <div class="ft-col">
     <h4>Social</h4>
     <ul>
-      <li><a href="https://instagram.com/YOUR_USERNAME" target="_blank">Instagram</a></li>
-      <li><a href="https://behance.net/YOUR_USERNAME" target="_blank">Behance</a></li>
-      <li><a href="https://dribbble.com/YOUR_USERNAME" target="_blank">Dribbble</a></li>
-      <li><a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank">LinkedIn</a></li>
+      <li><a href="#" target="_blank">Facebook</a></li>
+      <li><a href="#" target="_blank">GitHub</a></li>
+      <li><a href="#" target="_blank">Instagram</a></li>
+      <li><a href="#" target="_blank">TikTok</a></li>
     </ul>
   </div>
   <div class="ft-col">
     <h4>Email</h4>
-    <ul><li><a href="mailto:savillagrapa09@gmail.com">savillagrapa09@gmail.com</a></li></ul>
+    <ul><li><a href="mailto:sarahgrapa9703@gmail.com">sarahgrapa9703@gmail.com</a></li></ul>
   </div>
 </footer>
 
-<!-- ══ MOBILE BOTTOM NAV ══ -->
+<!-- MOBILE BOTTOM NAV -->
 <div class="mob-nav" id="mobNav">
-  <!-- Quote banner — matching the screenshot -->
   <div class="mob-quote">
     "Commit your work to the Lord, and your plans will be established."
     <strong>— Proverbs 16:3</strong>
   </div>
-  <!-- Icon pill nav -->
   <div class="mob-nav-bar">
     <button class="mob-item active" id="mob-home" onclick="mobNav(this,'#home')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -653,8 +633,6 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
     </button>
   </div>
 </div>
-
-<!-- Scroll-to-top FAB (rose circle, matching screenshot) -->
 <button class="mob-fab" id="mobFab" onclick="scrollToTop()" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
@@ -665,15 +643,12 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
     <button class="modal-close" onclick="closeModal('projModal')">✕</button>
     <div class="proj-modal-img" id="pmImg">
       <img id="pmHeroImg" src="" alt="">
-      <div class="img-ph" id="pmHeroPh">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        <span>Project preview</span>
-      </div>
     </div>
     <div class="proj-modal-body">
       <div class="proj-modal-tag" id="pmTag"></div>
       <div class="proj-modal-title" id="pmTitle"></div>
       <div class="proj-modal-desc" id="pmDesc"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;" id="pmTech"></div>
       <div class="proj-modal-imgs" id="pmImgs"></div>
     </div>
   </div>
@@ -697,12 +672,12 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
     <div class="contact-body">
       <div id="formWrap">
         <h2>Let's Work Together</h2>
-        <p class="sub">Have a project in mind? Fill in the form and I'll get back to you as soon as possible.</p>
+        <p class="sub">Have a project in mind? Fill in the form and I'll get back to you within 24 hours.</p>
         <div class="form-row">
           <div class="fg"><label>Your Name</label><input type="text" id="cName" placeholder="e.g. Juan dela Cruz"></div>
           <div class="fg"><label>Email Address</label><input type="email" id="cEmail" placeholder="you@example.com"></div>
         </div>
-        <div class="fg"><label>Subject</label><input type="text" id="cSubject" placeholder="e.g. Website Design Project"></div>
+        <div class="fg"><label>Subject</label><input type="text" id="cSubject" placeholder="e.g. Design Project"></div>
         <div class="fg"><label>Message</label><textarea id="cMessage" placeholder="Tell me about your project, timeline, budget..."></textarea></div>
         <button class="btn-submit" id="submitBtn" onclick="sendEmail()">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -718,28 +693,30 @@ footer{border-top:1px solid var(--border);padding:3rem 6%;display:grid;grid-temp
   </div>
 </div>
 
+<div class="lightbox-bg" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="Preview">
+</div>
+
 <script>
 const PROJECTS=[
-  {id:1,tag:'UI Design',name:'E-Commerce Redesign',desc:'A full redesign of an e-commerce platform focused on improving conversion rates and user experience through clean layouts, intuitive navigation, and a modern visual system.',color:'#f2d8dd',img:'',subImgs:['','','','']},
-  {id:2,tag:'UX Research',name:'Health App UX Study',desc:'Comprehensive user research and wireframing for a mobile health tracking application. Conducted user interviews, created personas, and designed a streamlined onboarding flow.',color:'#d8e8f2',img:'',subImgs:['','','','']},
-  {id:3,tag:'Branding',name:'Local Café Branding',desc:'Brand identity design for a local café — including logo, color palette, typography, packaging, and social media templates reflecting the warm, community spirit of the brand.',color:'#e8f2d8',img:'',subImgs:['','','','']},
-  {id:4,tag:'Mobile Design',name:'Travel Planner App',desc:'Mobile-first UI design for a travel planning app. Designed complete user flows from destination discovery to itinerary management with a focus on clarity and delight.',color:'#f2ecd8',img:'',subImgs:['','','','']},
-  {id:5,tag:'Web Design',name:'Portfolio Website',desc:'Custom portfolio website design for a fellow creative — featuring a bold editorial layout, dark mode support, and smooth micro-interactions to showcase their work effectively.',color:'#ead8f2',img:'',subImgs:['','','','']},
-  {id:6,tag:'Dashboard',name:'Analytics Dashboard',desc:'Data visualization dashboard design for a SaaS platform. Simplified complex data into readable charts and KPI cards, reducing cognitive load while maintaining data richness.',color:'#d8f2ee',img:'',subImgs:['','','','']},
-  {id:7,tag:'Print Design',name:'Event Poster Series',desc:'A series of promotional posters for a cultural festival using bold typography, vivid illustration, and consistent visual language across multiple event formats.',color:'#f2d8e8',img:'',subImgs:['','','','']},
-  {id:8,tag:'Social Media',name:'Brand Social Kit',desc:'Complete social media design kit for a lifestyle brand — post templates, story layouts, highlight covers, and a brand voice guide for consistent cross-platform presence.',color:'#d8ecf2',img:'',subImgs:['','','','']}
+  {id:1,tag:'Government',name:'Ayungon Website',url:'ayungon.gov.ph',desc:'Official Municipality of Ayungon government website.',tech:['WordPress','PHP','HTML','CSS','JavaScript'],img:'./images/ayungon/1.png',subImgs:[]},
+  {id:2,tag:'Web App',name:'First Aid Knowledge Based',url:'first-aid.dev',desc:'Basic first aid knowledge system.',tech:['PHP','HTML','CSS','JavaScript'],img:'./images/project 1.png',subImgs:[]},
+  {id:3,tag:'Booking System',name:'JETJAIRO Booking System',url:'jetjairo.com',desc:'Efficient booking platform.',tech:['PHP','HTML','CSS','JavaScript'],img:'./images/project 2.png',subImgs:[]},
+  {id:4,tag:'Inventory',name:'Pharmacy Inventory',url:'pharmacy-inv.com',desc:'Medicine tracking system.',tech:['PHP','HTML','CSS','JavaScript'],img:'./images/project 3.png',subImgs:[]},
+  {id:5,tag:'Inventory',name:'Furniture Inventory',url:'furniture-inv.com',desc:'Warehouse management.',tech:['PHP','HTML','CSS','JavaScript'],img:'./images/inventory_warehouse/1.png',subImgs:[]},
+  {id:6,tag:'School Services',name:'School Super Session',url:'school-inv.com',desc:'School services platform.',tech:['PHP','HTML','CSS','JavaScript'],img:'./images/session/sessisson.png',subImgs:[]},
+  {id:7,tag:'Restaurant',name:'Taste Like It Restaurant',url:'restaurant-inv.com',desc:'Restaurant ordering platform.',tech:['PHP','HTML','CSS','JavaScript'],img:'./images/taste/taste.png',subImgs:[]}
 ];
-
-const PH_SVG=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`;
 
 function buildFeatured(){
   const g=document.getElementById('featuredGrid');
-  PROJECTS.slice(0,4).forEach((p,i)=>{
+  PROJECTS.forEach((p,i)=>{
     const d=document.createElement('div');
     d.className='proj-card reveal';
     d.style.transitionDelay=`${.1+i*.1}s`;
     d.onclick=()=>openProject(p.id);
-    d.innerHTML=`<div class="proj-thumb" style="background:${p.color}">${p.img?`<img src="${p.img}" alt="${p.name}" onerror="this.style.display='none'">`:''}<div class="img-ph" ${p.img?'style="display:none"':''}>${PH_SVG}<span>Project image</span></div><div class="hover-overlay"><span>View Project</span></div></div><div class="proj-tag">${p.tag}</div><div class="proj-name">${p.name}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8h10M8 4l6 4-6 4"/></svg></div>`;
+    d.innerHTML=`<div class="proj-thumb"><img src="${p.img}" alt="${p.name}"><div class="hover-overlay"><span>View Project</span></div></div><div class="proj-tag">${p.tag}</div><div class="proj-name">${p.name}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8h10M8 4l6 4-6 4"/></svg></div><div class="proj-url">${p.url}</div>`;
     g.appendChild(d);
   });
   reObserve();
@@ -753,7 +730,7 @@ function buildAllGrid(){
     d.className='all-card';
     d.style.animationDelay=`${.04+i*.06}s`;
     d.onclick=()=>{closeModal('allModal');setTimeout(()=>openProject(p.id),220)};
-    d.innerHTML=`<div class="all-thumb" style="background:${p.color}">${p.img?`<img src="${p.img}" alt="${p.name}" onerror="this.style.display='none'">`:''}<div class="img-ph" ${p.img?'style="display:none"':''}>${PH_SVG}</div><div class="hover-overlay"><span style="color:#fff;font-weight:600;font-size:.8rem">View</span></div></div><div class="all-proj-tag">${p.tag}</div><div class="all-proj-name">${p.name}</div>`;
+    d.innerHTML=`<div class="all-thumb">${p.img?`<img src="${p.img}" alt="${p.name}">`:''}<div class="hover-overlay"><span style="color:#fff;font-weight:600;font-size:.8rem">View</span></div></div><div class="all-proj-tag">${p.tag}</div><div class="all-proj-name">${p.name}</div>`;
     g.appendChild(d);
   });
 }
@@ -762,24 +739,26 @@ function openProject(id){
   const p=PROJECTS.find(x=>x.id===id);if(!p)return;
   document.getElementById('pmTag').textContent=p.tag;
   document.getElementById('pmTitle').textContent=p.name;
-  document.getElementById('pmDesc').textContent=p.desc;
-  document.getElementById('pmImg').style.background=p.color;
-  const hi=document.getElementById('pmHeroImg'),ph=document.getElementById('pmHeroPh');
-  if(p.img){hi.src=p.img;hi.style.display='block';hi.onload=()=>hi.classList.add('loaded');ph.style.display='none';}
-  else{hi.style.display='none';ph.style.display='flex';}
+  document.getElementById('pmDesc').textContent=p.desc + (p.link?` Live at ${p.url}.`:'');
+  const hi=document.getElementById('pmHeroImg');
+  hi.src=p.img||(p.subImgs[0]||'');
+  document.getElementById('pmTech').innerHTML=(p.tech||[]).map(t=>`<span style="border:1.5px solid var(--rose);color:var(--rose);border-radius:99px;padding:.25rem .8rem;font-size:.72rem;font-weight:600;">${t}</span>`).join('');
   const si=document.getElementById('pmImgs');si.innerHTML='';
   (p.subImgs||[]).forEach((src,n)=>{
-    const d=document.createElement('div');d.className='pm-sub';d.style.background=p.color;
-    d.innerHTML=src?`<img src="${src}" alt="Screenshot ${n+1}" onerror="this.style.display='none'">`:`<div class="img-ph" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;color:var(--muted);font-size:.65rem;opacity:.4">${PH_SVG}<span>Image ${n+1}</span></div>`;
+    const d=document.createElement('div');d.className='pm-sub';
+    d.innerHTML=`<img src="${src}" alt="${p.name} screenshot ${n+1}" onclick="openLightbox('${src}')">`;
     si.appendChild(d);
   });
   openModal('projModal');
 }
 
+function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+
 function openModal(id){if(id==='allModal')buildAllGrid();document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
 function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
 function bgClose(e,id){if(e.target===document.getElementById(id))closeModal(id);}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal-bg.open').forEach(m=>m.classList.remove('open'));document.body.style.overflow='';}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal-bg.open').forEach(m=>m.classList.remove('open'));closeLightbox();document.body.style.overflow='';}});
 
 async function sendEmail(){
   const name=document.getElementById('cName').value.trim();
@@ -790,8 +769,8 @@ async function sendEmail(){
   if(!/\S+@\S+\.\S+/.test(email)){alert('Please enter a valid email.');return;}
   const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending…';
   const fd=new FormData();fd.append('name',name);fd.append('email',email);fd.append('subject',subject);fd.append('message',msg);fd.append('_captcha','false');
-  try{await fetch('https://formsubmit.co/savillagrapa09@gmail.com',{method:'POST',body:fd,mode:'no-cors'});}
-  catch{window.location.href=`mailto:savillagrapa09@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`)}`;}
+  try{await fetch('https://formsubmit.co/sarahgrapa9703@gmail.com',{method:'POST',body:fd,mode:'no-cors'});}
+  catch{window.location.href=`mailto:sarahgrapa9703@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`)}`;}
   document.getElementById('formWrap').style.display='none';
   document.getElementById('formSuccess').style.display='block';
   setTimeout(()=>{
@@ -816,22 +795,18 @@ function mobNav(el,hash){
 
 function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
 
-// FAB visibility on scroll
 window.addEventListener('scroll',()=>{
   const fab=document.getElementById('mobFab');
   fab.classList.toggle('visible',window.scrollY>300);
 },{passive:true});
 
-// Auto-highlight active mobile nav item on scroll
-const sectionMap={home:'mob-home',work:'mob-work',about:'mob-skills',education:'mob-skills',experience:'mob-skills',social:'mob-contact',contact:'mob-contact',glance:'mob-home'};
+const sectionMap={home:'mob-home',work:'mob-work',about:'mob-skills',education:'mob-skills',experience:'mob-skills',certificates:'mob-skills',social:'mob-contact',contact:'mob-contact',glance:'mob-home'};
 document.querySelectorAll('section[id]').forEach(s=>{
   new IntersectionObserver(entries=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
-        // desktop nav
         document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
         const l=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(l)l.classList.add('active');
-        // mobile nav
         const mobId=sectionMap[e.target.id];
         if(mobId){
           document.querySelectorAll('.mob-item').forEach(i=>i.classList.remove('active'));
